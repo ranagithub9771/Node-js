@@ -1,0 +1,12 @@
+import express from "express";
+import { handleAddBook, handleDeleteBook, handleGetAllBooks, handleGetSingleBooks, handleUpdateBook } from "../controllers/book-controllers.js";
+
+const router = express.Router();
+
+router.get("all-books", handleGetAllBooks);
+router.get("book/:id", handleGetSingleBooks);
+router.post("add-book", handleAddBook);
+router.put("update-book/:id", handleUpdateBook);
+router.delete("/delete-book/:id", handleDeleteBook);
+
+export default router;
